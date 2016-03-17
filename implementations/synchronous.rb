@@ -2,7 +2,7 @@ require "./lib/mailer"
 require "benchmark"
 
 puts Benchmark.measure{
-  100.times do |i|
+  (ARGV[0] || 10_000).to_i.times do |i|
     Mailer.deliver do 
       from    "eki_#{i}@eqbalq.com"
       to      "jill_#{i}@example.com"
